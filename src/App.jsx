@@ -13,9 +13,7 @@ export default function App() {
 
   // State for user input and search result
   const [searchTerm, setSearchTerm] = useState("");
-  const [result, setResult] = useState(
-    "Enter a word and click Search to see the meaning.",
-  );
+  const [result, setResult] = useState("");
 
   // Search function
   const handleSearch = () => {
@@ -24,7 +22,7 @@ export default function App() {
     );
 
     if (found) {
-      setResult(`Meaning of "${found.word}": ${found.meaning}`);
+      setResult(` ${found.meaning}`);
     } else {
       setResult(`Word not found in the dictionary.`);
     }
@@ -34,7 +32,7 @@ export default function App() {
     <div
       style={{ maxWidth: "400px", margin: "50px auto", textAlign: "center" }}
     >
-      <h1>XDictionary</h1>
+      <h1>Dictionary App</h1>
       <input
         type="text"
         placeholder="Enter a word"
